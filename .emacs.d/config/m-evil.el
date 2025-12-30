@@ -13,4 +13,10 @@
   :config
   (evil-collection-init))
 
+(with-eval-after-load 'org
+  (with-eval-after-load 'evil
+    (evil-define-key 'normal org-mode-map (kbd "RET") #'org-open-at-point)
+    (evil-define-key 'normal org-mode-map (kbd "S-RET") #'org-open-at-point)))
+
+
 (provide 'm/evil)
