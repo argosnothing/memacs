@@ -1,4 +1,7 @@
 ;;; keybinds.el -*- lexical-binding: t; -*-
+(require 'm-rust)
+(require 'm-elisp)
+(require 'm-eglot)
 (use-package which-key
   :init
   (setq which-key-idle-delay 0.4
@@ -19,6 +22,7 @@
     :states '(normal visual motion)
     :keymaps 'override
     :prefix "SPC m"))
+
 (my/leader
   ;; Files
   "f"  '(:ignore t :which-key "files")
@@ -62,7 +66,14 @@
   "p k" #'project-forget-project
 
   ;; Search In Project
-  "SPC" #'consult-project-extra-find)
+  "SPC" #'consult-project-extra-find
+  )
+(my/leader
+  :keymaps 'emacs-lisp-mode-map
+  "c k" #'helpful-at-point)
+(my/leader
+  :keymaps 'rust-mode-map
+  "c k" #'eldoc)
 
 (general-define-key
  :states '(normal visual motion emacs)
@@ -78,4 +89,4 @@
  "C-j" #'windmove-down
  "C-k" #'windmove-up)
 
-(provide 'm/keybinds)
+(provide 'm-keybinds)

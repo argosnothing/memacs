@@ -23,4 +23,4 @@
   :config
   (vertico-posframe-mode 1))
 
-(provide 'm/completion)
+(provide 'm-completion)

@@ -1,6 +1,6 @@
 ;;; lang-rust.el -*- lexical-binding: t; -*-
 
-(require 'm/eglot)
+(require 'm-eglot)
 
 (use-package rust-mode
   :mode "\\.rs\\'"
@@ -18,5 +18,5 @@
 ;;   (add-to-list 'eglot-server-programs
 ;;                '(rust-mode . ("rust-analyzer"))))
 
-(provide 'm/lang-rust)
+(provide 'm-rust)
  

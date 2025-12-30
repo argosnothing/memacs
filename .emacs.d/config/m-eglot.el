@@ -7,7 +7,10 @@
 (use-package eldoc-box
   :init
   )
-(add-hook 'eglot-managed-mode-hook #'eldoc-box-hover-mode t)
+(with-eval-after-load 'eglot
+  (add-hook 'eglot-managed-mode-hook #'eldoc-mode)
+  (setq eldoc-idle-delay 0.1)
+  (setq eldoc-echo-area-use-multiline-p t))
+(add-hook 'eglot-managed-mode-hook #'eldoc-box-hover-at-point-mode t)
 
-
-(provide 'm/eglot)
+(provide 'm-eglot)

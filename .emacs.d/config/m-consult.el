@@ -12,4 +12,4 @@
   (("C-c p f" . consult-project-extra-find)
    ("C-c p o" . consult-project-extra-find-other-window)))
 
-(provide 'm/consult)
+(provide 'm-consult)

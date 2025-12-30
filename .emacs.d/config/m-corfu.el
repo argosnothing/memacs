@@ -15,4 +15,4 @@
   (add-to-list 'completion-at-point-functions #'cape-file)
   (add-to-list 'completion-at-point-functions #'cape-dabbrev))
 
-(provide 'm/corfu)
+(provide 'm-corfu)
