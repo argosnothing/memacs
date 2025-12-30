@@ -1,4 +1,5 @@
 (require 'm-eglot)
+
 (use-package consult)
 (use-package consult-project-extra
   :straight (consult-project-extra :type git :host github :repo "Qkessler/consult-project-extra")

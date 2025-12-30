@@ -2,6 +2,7 @@
 (require 'm-rust)
 (require 'm-elisp)
 (require 'm-eglot)
+(require 'dired)
 (use-package which-key
   :init
   (setq which-key-idle-delay 0.4
