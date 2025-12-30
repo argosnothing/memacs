@@ -81,7 +81,13 @@
  :states '(normal visual motion emacs)
  "M-x" #'execute-extended-command
  "M-:" #'eval-expression
- "C-M-x" #'eval-defun)
+ "C-M-x" #'eval-defun
+ "C-o" #'dired-jump)
+
+(general-define-key
+ :keymaps 'dired-mode-map
+ :states '(normal motion)
+ "h" #'dired-up-directory)
 
 ;; Better window movement
 (general-define-key
