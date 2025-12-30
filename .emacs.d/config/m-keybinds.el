@@ -66,6 +66,11 @@
   "p s" #'consult-ripgrep
   "p k" #'project-forget-project
 
+  "e b" #'eval-buffer
+
+  ;; Code
+  "c d" #'xref-find-definitions
+
   ;; Search In Project
   "SPC" #'consult-project-extra-find
   )
@@ -85,7 +90,12 @@
  "M-x" #'execute-extended-command
  "M-:" #'eval-expression
  "C-M-x" #'eval-defun
- "C-o" #'dired-jump)
+ "C-o" #'dired-jump
+ "C-c C-k" #'comment-or-uncomment-region)
+
+(general-define-key
+ :states '(normal visual emacs insert)
+ "M-SPC" #'avy-goto-word-0)
 
 (general-define-key
  :keymaps 'dired-mode-map

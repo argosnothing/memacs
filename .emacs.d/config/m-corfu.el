@@ -6,7 +6,7 @@
   :ensure t
   :demand t
   :init
-  (setq nerd-icons-font-family "Cascadia Code NF"
+  (setq 
         nerd-icons-scale-factor 1.0
         nerd-icons-install-fonts nil))
 

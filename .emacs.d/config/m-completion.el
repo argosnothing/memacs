@@ -1,6 +1,7 @@
 ;;; completion.el -*- lexical-binding: t; -*-
 (use-package vertico
   :init
+  (setq vertico-count 25)
   (vertico-mode 1))
 (use-package orderless
   :init
@@ -18,19 +19,21 @@
   :init
   (setq vertico-posframe-poshandler #'posframe-poshandler-frame-center
         vertico-posframe-width 90
-        vertico-posframe-border-width 1)
+        vertico-posframe-border-width 1
+	vertico-posframe-parameters
+	`((font . ,(frame-parameter nil 'font))))
   :config
   (vertico-posframe-mode 1))
-
-(use-package nerd-icons
-  :ensure t)
-
-(use-package nerd-icons-completion
-  :ensure t
-  :after marginalia
-  :config
+											 
+(use-package nerd-icons-completion							 
+  :ensure t										 
+  :after marginalia									 
+  :init										     
+  (setq nerd-icons-completion-icon-size 1.5)						 
+  :config										 
   (nerd-icons-completion-mode 1)
-  (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
+ (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
+
 
 
 (provide 'm-completion)
