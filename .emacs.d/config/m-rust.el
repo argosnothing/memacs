@@ -6,7 +6,7 @@
   :mode "\\.rs\\'"
   :hook (rust-mode . eglot-ensure))
 
-;; Optional: explicitly pick server binary if you want
+;; Optional: explicitly pick server binary
 ;; (with-eval-after-load 'eglot
 ;;   (add-to-list 'eglot-server-programs
 ;;                '(rust-mode . ("rust-analyzer"))))

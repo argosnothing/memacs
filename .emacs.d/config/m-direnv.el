@@ -2,6 +2,5 @@
 
 (use-package envrc
   :init
-  ;; Enable globally
   (envrc-global-mode))
 (provide 'm/envrc)

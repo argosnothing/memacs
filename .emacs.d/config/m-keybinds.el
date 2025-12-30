@@ -1,8 +1,4 @@
 ;;; keybinds.el -*- lexical-binding: t; -*-
-
-;; --------------------
-;; which-key (leader popups)
-;; --------------------
 (use-package which-key
   :init
   (setq which-key-idle-delay 0.4
@@ -10,31 +6,19 @@
         which-key-max-description-length 32)
   :config
   (which-key-mode 1))
-
-;; --------------------
-;; general (keybinding framework)
-;; --------------------
 (use-package general
   :config
-  ;; Make general aware of evil states
   (general-evil-setup t)
-
-  ;; Doom-style leader
   (general-create-definer my/leader
     :states '(normal visual motion)
     :keymaps 'override
     :prefix "SPC"
     :global-prefix "C-SPC")
 
-  ;; Local leader (like Doom's SPC m)
   (general-create-definer my/local-leader
     :states '(normal visual motion)
     :keymaps 'override
     :prefix "SPC m"))
-
-;; --------------------
-;; Global leader bindings
-;; --------------------
 (my/leader
   ;; Files
   "f"  '(:ignore t :which-key "files")
