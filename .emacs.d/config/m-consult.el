@@ -1,3 +1,4 @@
+(require 'm-eglot)
 (use-package consult)
 (use-package consult-project-extra
   :straight (consult-project-extra :type git :host github :repo "Qkessler/consult-project-extra")
@@ -11,5 +12,9 @@
   :bind
   (("C-c p f" . consult-project-extra-find)
    ("C-c p o" . consult-project-extra-find-other-window)))
+(use-package consult-eglot)
+(setq xref-show-xrefs-function #'consult-xref
+      xref-show-definitions-function #'consult-xref)
+
 
 (provide 'm-consult)

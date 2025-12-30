@@ -73,6 +73,8 @@
   "c k" #'helpful-at-point)
 (my/leader
   :keymaps 'rust-mode-map
+  "c D" #'consult-eglot-symbols
+  "c e" #'consult-flymake
   "c k" #'eldoc)
 
 (general-define-key

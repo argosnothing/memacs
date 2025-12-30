@@ -4,9 +4,7 @@
 
 (setq eglot-autoshutdown t
       eglot-events-buffer-size 0)
-(use-package eldoc-box
-  :init
-  )
+(use-package eldoc-box)
 (with-eval-after-load 'eglot
   (add-hook 'eglot-managed-mode-hook #'eldoc-mode)
   (setq eldoc-idle-delay 0.1)
