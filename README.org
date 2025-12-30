@@ -1,0 +1,12 @@
+#+DOWNLOADED: https://upload.wikimedia.org/wikipedia/commons/0/08/EmacsIcon.svg @ 2025-12-29 19:38:33
+[[file:2025-12-29_19-38-33_EmacsIcon.svg]]
+# memacs
+This is *me* macs, not /you/ macs.
+
+This config exists because:
+- I want Doom-level ergonomics without Doom’s framework
+
+## Design goals
+- Doom-like UX, but assembled manually
+- Works inside a **sandboxed HOME** (memacs runs with its own `$HOME`)
+- [[file:.emacs.d/config/m-core.el]] defines where your real home is, you will want to change it from my username
