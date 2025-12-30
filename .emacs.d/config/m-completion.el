@@ -18,9 +18,19 @@
   :init
   (setq vertico-posframe-poshandler #'posframe-poshandler-frame-center
         vertico-posframe-width 90
-        vertico-posframe-height 20
         vertico-posframe-border-width 1)
   :config
   (vertico-posframe-mode 1))
+
+(use-package nerd-icons
+  :ensure t)
+
+(use-package nerd-icons-completion
+  :ensure t
+  :after marginalia
+  :config
+  (nerd-icons-completion-mode 1)
+  (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
+
 
 (provide 'm-completion)

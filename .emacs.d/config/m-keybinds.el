@@ -71,12 +71,14 @@
   )
 (my/leader
   :keymaps 'emacs-lisp-mode-map
-  "c k" #'helpful-at-point)
+  "c k" #'helpful-at-point
+  )
 (my/leader
   :keymaps 'rust-mode-map
   "c D" #'consult-eglot-symbols
   "c e" #'consult-flymake
-  "c k" #'eldoc)
+  "c k" #'eldoc
+  "c h" #'eldoc-box-help-at-point)
 
 (general-define-key
  :states '(normal visual motion emacs)

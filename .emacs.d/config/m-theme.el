@@ -19,4 +19,14 @@
   (doom-modeline-enable-word-count nil)
   (doom-modeline-continuous-word-count-modes '(org-mode))
   (doom-modeline-buffer-state-icon t)
-  (doom-modeline-modal-icon nil))
+  (doom-modeline-modal-icon nil)
+  :config
+  (setq
+   eglot-report-progress t
+   doom-modeline-lsp t
+   doom-modeline-support-eglot t))
+(with-eval-after-load 'doom-modeline
+  (add-to-list 'mode-line-misc-info
+               '(eglot--managed-mode (" [" eglot--mode-line-format "] ")) t)
+
+  (doom-modeline-refresh-bars))
