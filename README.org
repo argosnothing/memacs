@@ -10,5 +10,5 @@ This config exists because:
 - Doom-like UX, but assembled manually
 - Works inside a **sandboxed HOME** (memacs runs with its own `$HOME`)
 - [[file:.emacs.d/config/m-core.el]] defines where your real home is, you will want to change it from my username
-- On nix you can create a wrapper around this to isolate its home without needing to lock the config into your store.
+- On nix you can create a wrapper around this to isolate its home without needing to lock the config into your store.\\
   [[file:https://github.com/argosnothing/nixos-config/blob/c5da009a7545aaa075c75df23300a43897335107/modules/features/gui/apps/editors/memacs.nix#L4][here]] is how I do this
