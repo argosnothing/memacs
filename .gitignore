@@ -15,6 +15,7 @@
 .emacs.d/projects
 .emacs.d/transient/*
 .emacs.d/autosaves/*
+.emacs.d/custom.el
 *.elc
 
 # Build caches
