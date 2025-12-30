@@ -10,6 +10,11 @@
 .emacs.d/smex-items
 .emacs.d/tramp
 .emacs.d/.mc-lists.el
+.emacs.d/straight/*
+.emacs.d/backups/*
+.emacs.d/projects
+.emacs.d/transient/*
+.emacs.d/autosaves/*
 *.elc
 
 # Build caches
