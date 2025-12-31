@@ -4,7 +4,8 @@
 ;;(load-theme 'leuven-dark)
 (provide 'm-theme)
 (use-package doom-themes)
-(load-theme 'doom-one t)
+;;(load-theme 'doom-one t)
+(load-theme 'doom-dark+ t)
 (use-package doom-modeline
   :straight t
   :init

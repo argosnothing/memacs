@@ -3,5 +3,5 @@
 (scroll-bar-mode -1)
 (global-display-line-numbers-mode 1)
 (setq inhibit-startup-message t)
-(setq default-directory "/home/salivala")
+(setq default-directory "~/")
 (provide 'm/ui)

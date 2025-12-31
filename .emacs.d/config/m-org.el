@@ -1,3 +1,4 @@
+(require 'm-core)
 (use-package org-download
   :after org
   :config
@@ -14,5 +15,9 @@
           (gnus . gnus)
           (wl . wl-other-frame))))
 
+(setq org-capture-templates
+      `(("p" "Project note" entry
+         (file ,(expand-file-name "org/project.org" m-real-home))
+         "*** %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n")))
 
 (provide 'm-org)

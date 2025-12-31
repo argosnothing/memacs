@@ -64,12 +64,14 @@
   "p p" #'project-switch-project
   "p f" #'project-find-file
   "p s" #'consult-ripgrep
+  "/"   #'consult-ripgrep
   "p k" #'project-forget-project
 
   "e b" #'eval-buffer
 
   ;; Code
   "c d" #'xref-find-definitions
+  "c a" #'eglot-code-actions
 
   ;; Search In Project
   "SPC" #'consult-project-extra-find

@@ -1,0 +1,8 @@
+library=
+name=NSS Internal PKCS #11 Module
+parameters=configdir='sql:/home/salivala/memacs/.mozilla/firefox/ctrg4s4a.default' certPrefix='' keyPrefix='' secmod='secmod.db' flags=optimizeSpace updatedir='' updateCertPrefix='' updateKeyPrefix='' updateid='' updateTokenDescription='' 
+NSS=Flags=internal,critical trustOrder=75 cipherOrder=100 slotParams=(1={slotFlags=[ECC,RSA,DSA,DH,RC2,RC4,DES,RANDOM,SHA1,MD5,MD2,SSL,TLS,AES,Camellia,SEED,SHA256,SHA512] askpw=any timeout=30})
+
+library=/nix/store/8ab57wrrv7ph4045c8cmg170w0p0l5hz-opensc-0.26.1/lib/opensc-pkcs11.so
+name=OpenSC PKCS#11 Module
+
