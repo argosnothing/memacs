@@ -1,0 +1,27 @@
+(use-package nerd-icons
+  :demand t)
+
+(use-package all-the-icons
+  :demand t
+  :if (display-graphic-p))
+
+(use-package centaur-tabs
+  :demand t
+  :custom
+  (centaur-tabs-set-icons t)
+  (centaur-tabs-icon-type 'nerd-icons)
+  :config
+  (centaur-tabs-mode 1)
+  :bind
+  ("C-<prior>" . centaur-tabs-backward)
+  ("C-<next>"  . centaur-tabs-forward))
+
+(use-package general
+  :after centaur-tabs
+  :config
+  (my/leader
+    "t"   '(:ignore t :which-key "tabs")
+    "t n" #'centaur-tabs-forward-tab
+    "t p" #'centaur-tabs-backward-tab
+    "t a" #'centaur-tabs-ace-jump
+    "t k" #'centaur-tabs-kill-current-tab))

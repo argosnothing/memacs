@@ -4,15 +4,7 @@
   (indent-bars-treesit-support t)
   (indent-bars-selection-method)
  (indent-bars-treesit-scope
-  '((python
-     function_definition
-     class_definition
-     for_statement
-     if_statement
-     with_statement
-     while_statement)
-
-     (rust
+  '((rust
       mod_item
       impl_item
       trait_item

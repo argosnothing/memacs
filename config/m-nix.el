@@ -11,10 +11,4 @@
   (add-to-list 'eglot-server-programs
                '(nix-mode . ("nixd"))))
 
-(add-hook 'eglot-managed-mode-hook
-	  (lambda()
-	    (when (derived-mode-p 'nix-mode)
-	      (when (fboundp 'eglot-inlay-hints-mode)
-		(eglot-inlay-hints-mode)))))
-
-(provide 'm/lang-nix)
+(provide 'm-nix)
