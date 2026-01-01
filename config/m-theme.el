@@ -2,7 +2,6 @@
 (mapc #'disable-theme custom-enabled-themes)
 ;;(load-theme 'leuven t)
 ;;(load-theme 'leuven-dark)
-(provide 'm-theme)
 (use-package doom-themes)
 ;;(load-theme 'doom-one t)
 (load-theme 'doom-dark+ t)
@@ -31,3 +30,4 @@
                '(eglot--managed-mode (" [" eglot--mode-line-format "] ")) t)
 
   (doom-modeline-refresh-bars))
+(provide 'm-theme)

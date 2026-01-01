@@ -7,26 +7,39 @@
   :demand t
   :init
   (setq 
-        nerd-icons-scale-factor 1.0
-        nerd-icons-install-fonts nil))
+   nerd-icons-scale-factor 1.0
+   nerd-icons-install-fonts nil))
 
 (use-package corfu
   :ensure t
+  :custom
+  (corfu-auto t)
+  (corfu-auto-delay 0.2)
+  (corfu-preselect 'prompt)
   :init
-  (setq corfu-auto t
-        corfu-auto-delay 0.0
-        corfu-auto-prefix 1
-        corfu-cycle t
-        corfu-preselect 'prompt
-        corfu-quit-no-match 'separator)
-  (global-corfu-mode 1))
+  (global-corfu-mode 1)
+  :config
+  (setq corfu-popupinfo-mode 1)
+  (setq corfu-background nil
+	corfu-foreground nil
+	corfu-border-width 1)
+  (custom-set-faces
+   '(corfu-default ((t :inherit default)))
+   '(corfu-current ((t :inherit highlight :box (:line-width -1))))
+   '(corfu-bar ((t :inherit highlight)))
+   '(corfu-border ((t :inherit shadow))))
+  :bind
+  (:map corfu-map
+	("TAB" . corfu-next)
+	([tab] . corfu-next)
+	("S-TAB" . corfu-previous)
+	([backtab] . corfu-previous)))
 
 (use-package nerd-icons-corfu
   :ensure t
   :after (corfu nerd-icons)
-  :init
+  :config
   (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
-
 
 (use-package cape
   :ensure t

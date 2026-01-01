@@ -6,6 +6,7 @@
 
 (make-directory (expand-file-name "backups/" user-emacs-directory) t)
 (make-directory (expand-file-name "autosaves/" user-emacs-directory) t)
+
 (setq package-enable-at-startup nil)
 (defvar bootstrap-version)
 (let ((bootstrap-file
@@ -17,7 +18,7 @@
   (unless (file-exists-p bootstrap-file)
     (with-current-buffer
         (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         "https://radian-software.github.io/straight.el/install.el"
          'silent 'inhibit-cookies)
       (goto-char (point-max))
       (eval-print-last-sexp)))
@@ -29,7 +30,7 @@
 (let ((config-dir (expand-file-name "config" user-emacs-directory)))
   (add-to-list 'load-path config-dir)
   (dolist (file (directory-files config-dir t "\\.el$"))
-    (load file nil 'nomessage)))
+   (load file nil 'nomessage)))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)

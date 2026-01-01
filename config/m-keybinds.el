@@ -1,7 +1,4 @@
 ;;; keybinds.el -*- lexical-binding: t; -*-
-(require 'm-rust)
-(require 'm-elisp)
-(require 'm-eglot)
 (require 'dired)
 (use-package which-key
   :init
@@ -71,21 +68,10 @@
 
   ;; Code
   "c d" #'xref-find-definitions
-  "c a" #'eglot-code-actions
 
   ;; Search In Project
   "SPC" #'consult-project-extra-find
   )
-(my/leader
-  :keymaps 'emacs-lisp-mode-map
-  "c k" #'helpful-at-point
-  )
-(my/leader
-  :keymaps 'rust-mode-map
-  "c D" #'consult-eglot-symbols
-  "c e" #'consult-flymake
-  "c k" #'eldoc
-  "c h" #'eldoc-box-help-at-point)
 
 (general-define-key
  :states '(normal visual motion emacs)

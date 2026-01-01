@@ -1,6 +1,7 @@
 ;;; eglot-core.el -*- lexical-binding: t; -*-
 
 (require 'eglot)
+(require 'm-keybinds)
 
 (setq eglot-report-progress t
       eglot-autoshutdown t
@@ -10,22 +11,11 @@
 
 (use-package eldoc-box
   :ensure t
-  :demand t)
+  :demand t
+  :hook (eldoc-mode . eldoc-box-hover-at-point-mode))
+(my/leader
+  "c a" #'eglot-code-actions)
 
-(defun my/eglot-eldoc-box-enable ()
-  (eldoc-mode 1)
-  (when (fboundp 'eldoc-box-hover-at-point-mode)
-    (eldoc-box-hover-at-point-mode 1))
-  (when (fboundp 'eldoc-box-hover-mode)
-    (eldoc-box-hover-mode 1)))
-
-(add-hook 'eglot-managed-mode-hook #'my/eglot-eldoc-box-enable)
-
-(defun my/eldoc-box-help-at-point ()
-  (interactive)
-  (require 'eldoc-box)
-  (eldoc-mode 1)
-  (eldoc-print-current-symbol-info)
-  (call-interactively #'eldoc-box-help-at-point))
+(setq treesit-font-lock-level 4)
 
 (provide 'm-eglot)
