@@ -24,7 +24,7 @@
 	vertico-posframe-parameters
 	`((font . ,(frame-parameter nil 'font))))
   :config
-  (vertico-posframe-mode 1))
+  (vertico-posframe-mode -1))
 											 
 (use-package nerd-icons-completion							 
   :ensure t

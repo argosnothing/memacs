@@ -17,6 +17,14 @@
   :defer t
   :commands (vterm vterm-mode))
 
+(use-package eldoc-box
+  :after rust-ts-mode
+  :config
+  (add-hook 'eldoc-box-buffer-hook
+            (lambda ()
+              (rust-ts-mode)
+              (font-lock-mode 1))))
+
 (defun my/vterm-run (cmd)
   (let ((buf (get-buffer-create "*vterm*")))
     (pop-to-buffer buf)
@@ -43,4 +51,3 @@
    "m c h" '(eldoc-box-help-at-point :which-key "hover doc")))
 
 (provide 'm-rust)
- 
