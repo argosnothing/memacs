@@ -1,8 +1,7 @@
 (use-package markdown-mode
   :defer t
-  :mode "\\.md\\'"
+  :mode ("README\\.md\\'" . gfm-mode)
   :ensure t
-  :config
-  (setq markdown-fontify-code-blocks-natively t))
+  :init (setq markdown-command "multimarkdown"))
 
 (provide 'm-markdown)

@@ -7,12 +7,6 @@
   :mode "\\.rs\\'"
   :hook (rust-ts-mode . eglot-ensure))
 
-;; (add-hook 'eglot-managed-mode-hook
-;;           (lambda ()
-;;             (when (derived-mode-p 'rust-ts-mode)
-;;               (when (fboundp 'eglot-inlay-hints-mode)
-;;                 (eglot-inlay-hints-mode 1)))))
-
 (use-package vterm
   :defer t
   :commands (vterm vterm-mode))
