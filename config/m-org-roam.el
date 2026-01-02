@@ -1,8 +1,5 @@
-(require 'm-org)
-(require 'm-keybinds)
-
-(straight-use-package '(org :type built-in))
 (use-package org-roam
+  :defer t
   :ensure t
   :custom
   (org-roam-directory (file-truename "~/org/"))
@@ -18,15 +15,16 @@
   (org-roam-db-autosync-mode)
   (require 'org-roam-protocol))
 
-(my/leader
-  ;; Org Roam
-  "o r" '(:ignore t :which-key "roam")
-  "o r f" #'org-roam-node-find
-  "o r i" #'org-roam-node-insert
-  "o r c" #'org-roam-capture
-  "o r g" #'org-roam-graph
-  "o r l" #'org-roam-buffer-toggle
-  "o r j" #'org-roam-dailies-capture-today)
+(with-eval-after-load 'general
+  (my/leader
+   ;; Org Roam
+   "o r" '(:ignore t :which-key "roam")
+   "o r f" #'org-roam-node-find
+   "o r i" #'org-roam-node-insert
+   "o r c" #'org-roam-capture
+   "o r g" #'org-roam-graph
+   "o r l" #'org-roam-buffer-toggle
+   "o r j" #'org-roam-dailies-capture-today))
 
 
 (provide 'm-og-roam)

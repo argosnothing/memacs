@@ -4,7 +4,7 @@
 
 (use-package nerd-icons
   :ensure t
-  :demand t
+  :defer t
   :init
   (setq 
    nerd-icons-scale-factor 1.0

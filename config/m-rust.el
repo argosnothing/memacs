@@ -7,8 +7,6 @@
   :mode "\\.rs\\'"
   :hook (rust-ts-mode . eglot-ensure))
 
-(add-hook 'prog-mode-hook #'treesit-inspect-mode)
-
 (add-hook 'eglot-managed-mode-hook
           (lambda ()
             (when (derived-mode-p 'rust-ts-mode)
@@ -16,7 +14,8 @@
                 (eglot-inlay-hints-mode 1)))))
 
 (use-package vterm
-  :ensure t)
+  :defer t
+  :commands (vterm vterm-mode))
 
 (defun my/vterm-run (cmd)
   (let ((buf (get-buffer-create "*vterm*")))

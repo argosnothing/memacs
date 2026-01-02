@@ -1,4 +1,5 @@
 (use-package elcord
+  :defer 2
   :after emacs
   :config
   (setq elcord-use-major-mode-as-main-icon t

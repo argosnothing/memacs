@@ -1,12 +1,12 @@
 (use-package nerd-icons
-  :demand t)
+  :defer t)
 
 (use-package all-the-icons
-  :demand t
+  :defer t
   :if (display-graphic-p))
 
 (use-package centaur-tabs
-  :demand t
+  :defer 1
   :custom
   (centaur-tabs-set-icons t)
   (centaur-tabs-icon-type 'nerd-icons)

@@ -9,6 +9,7 @@
   (evil-mode 1))
 
 (use-package evil-collection
+  :defer t
   :after evil
   :config
   (evil-collection-init))

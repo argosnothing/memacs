@@ -1,4 +1,6 @@
 (use-package treemacs
+  :defer t
+  :commands (treemacs treemacs-select-window)
   :ensure t
   :config
   (treemacs-follow-mode 1)
