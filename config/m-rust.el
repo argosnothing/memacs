@@ -33,7 +33,8 @@
    "m c c" '((lambda () (interactive) (my/vterm-run "nix develop -c cargo check")) :which-key "cargo check")
    "m c D" '(consult-eglot-symbols :which-key "document symbols")
    "m c e" '(consult-flymake :which-key "errors")
-   "m c k" '(eldoc :which-key "eldoc")
-   "m c h" '(eldoc-box-help-at-point :which-key "hover doc")))
+   ;; "m c k" '(eldoc :which-key "eldoc")
+   ;; "m c h" '(eldoc-box-help-at-point :which-key "hover doc"))
+  ))
 
 (provide 'm-rust)
