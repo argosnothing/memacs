@@ -1,9 +1,5 @@
-;;; eglot-core.el -*- lexical-binding: t; -*-
-
-(require 'eglot)
-(require 'm-keybinds)
-
-(use-package eglot)
+;;; m-eldoc.el -*- lexical-binding: t; -*-
+(require 'm-eglot)
 (use-package eldoc-box
   :ensure t
   :demand t
@@ -17,9 +13,5 @@
         (delay-mode-hooks (markdown-mode))
         (font-lock-mode 1)
         (font-lock-ensure))))))
-(my/leader
-  "c a" #'eglot-code-actions)
 
-(setq treesit-font-lock-level 4)
-
-(provide 'm-eglot)
+(provide 'm-eldoc)
