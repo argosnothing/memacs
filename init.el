@@ -8,6 +8,10 @@
 (make-directory (expand-file-name "autosaves/" user-emacs-directory) t)
 
 (setq package-enable-at-startup nil)
+
+;; Reduce straight.el overhead
+(setq straight-check-for-modifications '(check-on-save find-when-checking))
+
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name
@@ -16,13 +20,14 @@
             user-emacs-directory)))
       (bootstrap-version 7))
   (unless (file-exists-p bootstrap-file)
+    (message "Installing straight.el...")
     (with-current-buffer
         (url-retrieve-synchronously
          "https://radian-software.github.io/straight.el/install.el"
          'silent 'inhibit-cookies)
       (goto-char (point-max))
       (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
+  (load bootstrap-file nil nil))
 
 (setq straight-use-package-by-default t)
 
